@@ -1,19 +1,19 @@
-scikit-learn
-spacy-udpipe
-pymorphy2
-torch>=1.2
-matplotlib
-ipymarkup
-lxml
-scipy
-pandas
-tqdm
-youtokentome
-seaborn
-ipykernel
-ipython
-pyconll
-gensim==3.8.1
-wget
-livelossplot==0.5.3
+%load_ext autoreload
+%autoreload 2
+import random
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+import torch
+from torch import nn
+from torch.nn import functional as F
+import dlnlputils
+from dlnlputils.data import tokenize_corpus, build_vocabulary,
+texts_to_token_ids, \
+PaddedSequenceDataset, Embeddings
+from dlnlputils.pipeline import train_eval_loop, predict_with_model,
+init_random_seed
+from dlnlputils.visualization import plot_vectors
+init_random_seed()
 
