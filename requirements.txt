@@ -1,19 +1,9 @@
-scikit-learn
-spacy-udpipe
-pymorphy2
-torch>=1.2
-matplotlib
-ipymarkup
-lxml
-scipy
-pandas
-tqdm
-youtokentome
-seaborn
-ipykernel
-ipython
-pyconll
-gensim==3.8.1
-wget
-livelossplot==0.5.3
-
+full_dataset = list(pd.read_csv('./stepik-dl-nlp/datasets/nyt-ingredientssnapshot-2015.csv')['input'].dropna())
+random.shuffle(full_dataset)
+TRAIN_VAL_SPLIT = int(len(full_dataset) * 0.7)
+train_source = full_dataset[:TRAIN_VAL_SPLIT]
+test_source = full_dataset[TRAIN_VAL_SPLIT:]
+print("Обучающая выборка", len(train_source))
+print("Тестовая выборка", len(test_source))
+print()
+print('\n'.join(train_source[:10]))
